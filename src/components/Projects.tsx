@@ -1,20 +1,25 @@
+import Image from "next/image";
+
 const projects = [
   {
     title: "Wind Turbine Maintenance Advisor",
-    subtitle: "NLP & Information Retrieval",
+    subtitle: "NLP · Information Retrieval · Full Stack",
     description:
-      "An offline maintenance advisor that retrieves evidence from technical manuals using TF-IDF and cosine similarity, supported by a structured JSON knowledge base and rule-based intent and component detection.",
+      "An evidence-grounded wind turbine maintenance and troubleshooting advisor that retrieves technical-manual content using TF-IDF and cosine similarity, combines it with structured maintenance knowledge and rule-based reasoning, and provides an optional controlled LLM rewriting layer.",
     tech: [
       "Python",
+      "FastAPI",
+      "Next.js",
       "TF-IDF",
-      "Cosine Similarity",
       "Information Retrieval",
-      "JSON",
+      "Groq",
       "LLMs",
     ],
-    metric: "15 turbine components · Offline-first",
+    metric: "Evidence-grounded · Offline-first · Deployed",
     github:
       "https://github.com/abhinabadutta2019/wind-turbine-maintenance-advisor",
+    live: "https://wind-turbine-maintenance-advisor.vercel.app",
+    image: "/projects/wind-turbine-advisor.png",
     status: null,
   },
 
@@ -33,6 +38,8 @@ const projects = [
     ],
     metric: "Mean Whole-Tumor Dice ≈ 0.856",
     github: "https://github.com/abhinabadutta2019/brain-tumor-segmentation",
+    live: null,
+    image: null,
     status: null,
   },
 
@@ -51,6 +58,8 @@ const projects = [
     ],
     metric: "Explainable criterion-level matching",
     github: null,
+    live: null,
+    image: null,
     status: "In Progress",
   },
 
@@ -71,6 +80,8 @@ const projects = [
     metric: "Regression model comparison with Spark ML",
     github:
       "https://github.com/abhinabadutta2019/ApacheSparkRestaurantForecast",
+    live: null,
+    image: null,
     status: null,
   },
 ];
@@ -92,7 +103,7 @@ export default function Projects() {
 
         <p className="mt-4 max-w-2xl leading-7 text-zinc-400">
           Projects across NLP, information retrieval, deep learning, biomedical
-          AI, machine learning, and data engineering.
+          AI, machine learning, data engineering, and full-stack development.
         </p>
 
         {/* Project grid */}
@@ -100,72 +111,102 @@ export default function Projects() {
           {projects.map((project, index) => (
             <article
               key={project.title}
-              className="group flex flex-col rounded-xl border border-white/10 bg-white/[0.02] p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40 sm:p-8"
+              className="group flex flex-col overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40"
             >
-              {/* Top row */}
-              <div className="flex items-start justify-between gap-4">
-                <p className="font-mono text-xs uppercase tracking-wider text-cyan-400">
-                  {project.subtitle}
-                </p>
-
-                <span className="font-mono text-xs text-zinc-600">
-                  0{index + 1}
-                </span>
-              </div>
-
-              {/* Status */}
-              {project.status && (
-                <div className="mt-4">
-                  <span className="rounded-md border border-cyan-400/30 bg-cyan-400/[0.08] px-3 py-1 font-mono text-xs uppercase tracking-wide text-cyan-300">
-                    {project.status}
-                  </span>
+              {/* Project image */}
+              {project.image && (
+                <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-white/10 bg-[#05080d]">
+                  <Image
+                    src={project.image}
+                    alt={`${project.title} interface`}
+                    fill
+                    className="object-cover object-top transition duration-500 group-hover:scale-[1.02]"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
               )}
 
-              {/* Title */}
-              <h3 className="mt-4 text-2xl font-semibold leading-tight text-white">
-                {project.title}
-              </h3>
+              {/* Card content */}
+              <div className="flex flex-1 flex-col p-6 sm:p-8">
+                {/* Top row */}
+                <div className="flex items-start justify-between gap-4">
+                  <p className="font-mono text-xs uppercase tracking-wider text-cyan-400">
+                    {project.subtitle}
+                  </p>
 
-              {/* Description */}
-              <p className="mt-4 leading-7 text-zinc-400">
-                {project.description}
-              </p>
-
-              {/* Metric */}
-              <div className="mt-6 rounded-lg border border-cyan-400/15 bg-cyan-400/[0.03] px-4 py-3 font-mono text-sm text-cyan-300">
-                {project.metric}
-              </div>
-
-              {/* Technologies */}
-              <div className="mt-6 flex flex-wrap gap-2">
-                {project.tech.map((technology) => (
-                  <span
-                    key={technology}
-                    className="rounded-md border border-white/10 bg-white/[0.02] px-3 py-1.5 font-mono text-xs text-zinc-400 transition group-hover:border-white/15"
-                  >
-                    {technology}
+                  <span className="font-mono text-xs text-zinc-600">
+                    0{index + 1}
                   </span>
-                ))}
-              </div>
+                </div>
 
-              {/* Link */}
-              <div className="mt-auto pt-8">
-                {project.github ? (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-cyan-400 transition hover:text-cyan-300"
-                  >
-                    View on GitHub
-                    <span>→</span>
-                  </a>
-                ) : (
-                  <span className="text-sm text-zinc-600">
-                    Ongoing academic research
-                  </span>
+                {/* Status */}
+                {project.status && (
+                  <div className="mt-4">
+                    <span className="rounded-md border border-cyan-400/30 bg-cyan-400/[0.08] px-3 py-1 font-mono text-xs uppercase tracking-wide text-cyan-300">
+                      {project.status}
+                    </span>
+                  </div>
                 )}
+
+                {/* Title */}
+                <h3 className="mt-4 text-2xl font-semibold leading-tight text-white">
+                  {project.title}
+                </h3>
+
+                {/* Description */}
+                <p className="mt-4 leading-7 text-zinc-400">
+                  {project.description}
+                </p>
+
+                {/* Metric */}
+                <div className="mt-6 rounded-lg border border-cyan-400/15 bg-cyan-400/[0.03] px-4 py-3 font-mono text-sm text-cyan-300">
+                  {project.metric}
+                </div>
+
+                {/* Technologies */}
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {project.tech.map((technology) => (
+                    <span
+                      key={technology}
+                      className="rounded-md border border-white/10 bg-white/[0.02] px-3 py-1.5 font-mono text-xs text-zinc-400 transition group-hover:border-white/15"
+                    >
+                      {technology}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Links */}
+                <div className="mt-auto flex flex-wrap items-center gap-5 pt-8">
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-cyan-400 transition hover:text-cyan-300"
+                    >
+                      Live Demo
+                      <span>↗</span>
+                    </a>
+                  )}
+
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-zinc-400 transition hover:text-white"
+                    >
+                      GitHub
+                      <span>↗</span>
+                    </a>
+                  )}
+
+                  {!project.github && !project.live && (
+                    <span className="text-sm text-zinc-600">
+                      Ongoing academic research
+                    </span>
+                  )}
+                </div>
               </div>
             </article>
           ))}
