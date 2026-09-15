@@ -13,12 +13,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Abhinaba Dutta | Data & AI Engineer",
-  description:
-    "Portfolio of Abhinaba Dutta — Data Engineering, AI/ML, NLP, and software systems.",
+  title: "Abhinaba Dutta Portfolio",
+  description: "Portfolio of Abhinaba Dutta.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html
       lang="en"
