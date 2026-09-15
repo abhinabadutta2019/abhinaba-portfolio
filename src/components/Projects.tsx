@@ -13,7 +13,7 @@ const projects = [
     live: "https://wind-turbine-maintenance-advisor.vercel.app",
     presentation: null,
     visualization: null,
-    image: "/projects/wind-turbine-advisor.png",
+    image: "/projects/wind-turbine-advisor.jpg",
     status: null,
   },
 
