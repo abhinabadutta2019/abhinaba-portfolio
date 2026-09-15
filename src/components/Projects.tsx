@@ -5,83 +5,87 @@ const projects = [
     title: "Wind Turbine Maintenance Advisor",
     subtitle: "NLP · Information Retrieval · Full Stack",
     description:
-      "An evidence-grounded wind turbine maintenance and troubleshooting advisor that retrieves technical-manual content using TF-IDF and cosine similarity, combines it with structured maintenance knowledge and rule-based reasoning, and provides an optional controlled LLM rewriting layer.",
-    tech: [
-      "Python",
-      "FastAPI",
-      "Next.js",
-      "TF-IDF",
-      "Information Retrieval",
-      "Groq",
-      "LLMs",
-    ],
-    metric: "Evidence-grounded · Offline-first · Deployed",
+      "Evidence-grounded maintenance assistant using TF-IDF retrieval, structured knowledge, FastAPI, Next.js, and controlled LLM rewriting.",
+    tech: ["Python", "FastAPI", "Next.js", "TF-IDF", "Groq"],
+    metric: "Offline-first · Evidence-grounded · Deployed",
     github:
       "https://github.com/abhinabadutta2019/wind-turbine-maintenance-advisor",
     live: "https://wind-turbine-maintenance-advisor.vercel.app",
+    presentation: null,
+    visualization: null,
     image: "/projects/wind-turbine-advisor.png",
     status: null,
+  },
+
+  {
+    title: "Explainable Patient–Clinical Trial Matching",
+    subtitle: "Master’s Thesis · Biomedical NLP",
+    description:
+      "Explainable patient–trial matching using structured extraction, SNOMED CT normalization, knowledge graphs, and criterion-level reasoning.",
+    tech: ["Python", "LLMs", "SNOMED CT", "Knowledge Graphs", "TREC"],
+    metric: "Explainable criterion-level matching",
+    github: null,
+    live: null,
+    presentation: null,
+    visualization: null,
+    image: "/projects/clinical-trial-matching.png",
+    status: "In Progress",
   },
 
   {
     title: "Brain Tumor Segmentation",
     subtitle: "Deep Learning · Medical Imaging",
     description:
-      "A 2D U-Net brain-tumor segmentation system using a ResNet18 encoder and multimodal MRI data from the BraTS 2020 dataset, evaluated using patient-level 5-fold cross-validation.",
-    tech: [
-      "Python",
-      "PyTorch",
-      "U-Net",
-      "ResNet18",
-      "Medical Imaging",
-      "BraTS 2020",
-    ],
+      "2D U-Net brain-tumor segmentation using a ResNet18 encoder and multimodal MRI from BraTS 2020 with patient-level cross-validation.",
+    tech: ["Python", "PyTorch", "U-Net", "ResNet18", "BraTS 2020"],
     metric: "Mean Whole-Tumor Dice ≈ 0.856",
     github: "https://github.com/abhinabadutta2019/brain-tumor-segmentation",
     live: null,
-    image: null,
+    presentation:
+      "https://github.com/abhinabadutta2019/brain-tumor-segmentation/blob/main/docs/Brain_Tumor_Segmentation_BraTS2020_Presentation.pdf",
+    visualization: null,
+    image: "/projects/brain-tumor-segmentation.png",
     status: null,
   },
 
   {
-    title: "Explainable Patient–Clinical Trial Matching",
-    subtitle: "Master’s Thesis Research",
+    title: "Healthcare Data Warehouse & Analytics",
+    subtitle: "Data Warehousing · SQL · Database Design",
     description:
-      "An ongoing research project for matching patient descriptions with clinical-trial eligibility criteria using structured extraction, semantic normalization, biomedical concepts, rule-based validation, and criterion-level reasoning.",
+      "Healthcare data warehousing project covering data analysis, ER modeling, dimensional schema design, MySQL implementation, analytical queries, and reporting.",
     tech: [
-      "Python",
-      "LLMs",
-      "Biomedical NLP",
-      "SNOMED CT",
-      "Knowledge Graphs",
-      "TREC Clinical Trials",
+      "MySQL",
+      "SQL",
+      "Data Warehousing",
+      "ER Modeling",
+      "Dimensional Modeling",
     ],
-    metric: "Explainable criterion-level matching",
-    github: null,
+    metric: "ER · Fact · Snowflake Schema Design",
+    github:
+      "https://github.com/abhinabadutta2019/healthcare-data-warehouse-analytics",
     live: null,
-    image: null,
-    status: "In Progress",
+    presentation:
+      "https://github.com/abhinabadutta2019/healthcare-data-warehouse-analytics/blob/main/Healthcare_Data_Warehouse_Design_and_Analytics.pdf",
+    visualization:
+      "https://github.com/abhinabadutta2019/healthcare-data-warehouse-analytics/blob/main/Tableau_Visualizations.pdf",
+    image: "/projects/healthcare-data-warehouse.png",
+    status: "Academic Project",
   },
 
   {
     title: "Restaurant Revenue Forecasting",
     subtitle: "Apache Spark · Machine Learning",
     description:
-      "A data-processing and machine-learning project for predicting restaurant revenue using Apache Spark. The project processes structured restaurant data, integrates MongoDB, performs feature preparation, and compares multiple regression models.",
-    tech: [
-      "Apache Spark",
-      "Java",
-      "MongoDB",
-      "Machine Learning",
-      "Linear Regression",
-      "Random Forest",
-      "GBT",
-    ],
-    metric: "Regression model comparison with Spark ML",
+      "Restaurant revenue forecasting with Apache Spark, MongoDB, feature engineering, and model comparison across Linear Regression, Random Forest, and GBT.",
+    tech: ["Apache Spark", "Java", "Spark MLlib", "MongoDB", "GBT"],
+    metric: "RMSE · MAPE · R² model comparison",
     github:
       "https://github.com/abhinabadutta2019/ApacheSparkRestaurantForecast",
     live: null,
-    image: null,
+    presentation:
+      "https://github.com/abhinabadutta2019/ApacheSparkRestaurantForecast/blob/main/docs/Restaurant_Revenue_Prediction_Presentation.pdf",
+    visualization: null,
+    image: "/projects/restaurant-forecasting.png",
     status: null,
   },
 ];
@@ -90,45 +94,37 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="border-t border-white/10 bg-[#080c12] py-24"
+      className="border-t border-white/10 bg-[#080c12] py-20"
     >
       <div className="mx-auto max-w-6xl px-6">
-        {/* Section label */}
         <p className="mb-3 font-mono text-sm text-cyan-400">04. Projects</p>
 
-        {/* Section title */}
         <h2 className="text-3xl font-bold text-white sm:text-4xl">
           Selected work.
         </h2>
 
-        <p className="mt-4 max-w-2xl leading-7 text-zinc-400">
-          Projects across NLP, information retrieval, deep learning, biomedical
-          AI, machine learning, data engineering, and full-stack development.
+        <p className="mt-3 max-w-2xl text-zinc-400">
+          Projects across data engineering, AI/ML, NLP, and software systems.
         </p>
 
-        {/* Project grid */}
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
           {projects.map((project, index) => (
             <article
               key={project.title}
-              className="group flex flex-col overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40"
+              className="group flex min-h-[620px] flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40"
             >
-              {/* Project image */}
-              {project.image && (
-                <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-white/10 bg-[#05080d]">
-                  <Image
-                    src={project.image}
-                    alt={`${project.title} interface`}
-                    fill
-                    className="object-cover object-top transition duration-500 group-hover:scale-[1.02]"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
-              )}
+              <div className="relative h-52 w-full overflow-hidden border-b border-white/10 bg-[#05080d]">
+                <Image
+                  src={project.image}
+                  alt={`${project.title} preview`}
+                  fill
+                  loading="eager"
+                  className="object-cover object-center transition duration-500 group-hover:scale-[1.02]"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
 
-              {/* Card content */}
-              <div className="flex flex-1 flex-col p-6 sm:p-8">
-                {/* Top row */}
+              <div className="flex flex-1 flex-col p-7">
                 <div className="flex items-start justify-between gap-4">
                   <p className="font-mono text-xs uppercase tracking-wider text-cyan-400">
                     {project.subtitle}
@@ -139,53 +135,46 @@ export default function Projects() {
                   </span>
                 </div>
 
-                {/* Status */}
                 {project.status && (
-                  <div className="mt-4">
-                    <span className="rounded-md border border-cyan-400/30 bg-cyan-400/[0.08] px-3 py-1 font-mono text-xs uppercase tracking-wide text-cyan-300">
+                  <div className="mt-3">
+                    <span className="rounded-md border border-cyan-400/30 bg-cyan-400/[0.08] px-2.5 py-1 font-mono text-xs uppercase tracking-wide text-cyan-300">
                       {project.status}
                     </span>
                   </div>
                 )}
 
-                {/* Title */}
                 <h3 className="mt-4 text-2xl font-semibold leading-tight text-white">
                   {project.title}
                 </h3>
 
-                {/* Description */}
-                <p className="mt-4 leading-7 text-zinc-400">
+                <p className="mt-3 leading-7 text-zinc-400">
                   {project.description}
                 </p>
 
-                {/* Metric */}
-                <div className="mt-6 rounded-lg border border-cyan-400/15 bg-cyan-400/[0.03] px-4 py-3 font-mono text-sm text-cyan-300">
+                <div className="mt-5 rounded-lg border border-cyan-400/15 bg-cyan-400/[0.03] px-4 py-3 font-mono text-sm text-cyan-300">
                   {project.metric}
                 </div>
 
-                {/* Technologies */}
-                <div className="mt-6 flex flex-wrap gap-2">
+                <div className="mt-5 flex flex-wrap gap-2">
                   {project.tech.map((technology) => (
                     <span
                       key={technology}
-                      className="rounded-md border border-white/10 bg-white/[0.02] px-3 py-1.5 font-mono text-xs text-zinc-400 transition group-hover:border-white/15"
+                      className="rounded-md border border-white/10 bg-white/[0.02] px-3 py-1.5 font-mono text-xs text-zinc-400"
                     >
                       {technology}
                     </span>
                   ))}
                 </div>
 
-                {/* Links */}
-                <div className="mt-auto flex flex-wrap items-center gap-5 pt-8">
+                <div className="mt-auto flex flex-wrap items-center gap-5 pt-7">
                   {project.live && (
                     <a
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-medium text-cyan-400 transition hover:text-cyan-300"
+                      className="text-sm font-medium text-cyan-400 transition hover:text-cyan-300"
                     >
-                      Live Demo
-                      <span>↗</span>
+                      Live Demo ↗
                     </a>
                   )}
 
@@ -194,18 +183,42 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-medium text-zinc-400 transition hover:text-white"
+                      className="text-sm font-medium text-zinc-400 transition hover:text-white"
                     >
-                      GitHub
-                      <span>↗</span>
+                      GitHub ↗
                     </a>
                   )}
 
-                  {!project.github && !project.live && (
-                    <span className="text-sm text-zinc-600">
-                      Ongoing academic research
-                    </span>
+                  {project.presentation && (
+                    <a
+                      href={project.presentation}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm font-medium text-cyan-400 transition hover:text-cyan-300"
+                    >
+                      Presentation ↗
+                    </a>
                   )}
+
+                  {project.visualization && (
+                    <a
+                      href={project.visualization}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm font-medium text-cyan-400 transition hover:text-cyan-300"
+                    >
+                      Visualizations ↗
+                    </a>
+                  )}
+
+                  {!project.github &&
+                    !project.live &&
+                    !project.presentation &&
+                    !project.visualization && (
+                      <span className="text-sm text-zinc-600">
+                        Ongoing research
+                      </span>
+                    )}
                 </div>
               </div>
             </article>
