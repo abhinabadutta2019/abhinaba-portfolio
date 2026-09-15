@@ -68,7 +68,7 @@ const projects = [
       "https://github.com/abhinabadutta2019/healthcare-data-warehouse-analytics/blob/main/Healthcare_Data_Warehouse_Design_and_Analytics.pdf",
     visualization:
       "https://github.com/abhinabadutta2019/healthcare-data-warehouse-analytics/blob/main/Tableau_Visualizations.pdf",
-    image: "/projects/healthcare-data-warehouse.png",
+    image: "/projects/healthcare-data-warehouse-cropped.png",
     status: "Academic Project",
   },
 
