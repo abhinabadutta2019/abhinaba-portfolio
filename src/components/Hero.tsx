@@ -132,10 +132,10 @@ export default function Hero() {
               </div>
 
               <div className="space-y-5 p-5 font-mono text-xs">
-                {/* Program */}
+                {/* Education */}
                 <div>
                   <p className="text-[10px] uppercase tracking-wider text-zinc-600">
-                    Current Program
+                    Education
                   </p>
 
                   <p className="mt-1.5 leading-5 text-cyan-300">
@@ -157,7 +157,7 @@ export default function Hero() {
                     {[
                       "Data Engineering",
                       "AI / ML",
-                      "Biomedical NLP",
+                      "NLP",
                       "Information Retrieval",
                     ].map((item) => (
                       <span
@@ -176,30 +176,31 @@ export default function Hero() {
                     Primary Stack
                   </p>
 
-                  <p className="mt-2 leading-6 text-zinc-400">
-                    <span className="text-cyan-300">Python</span>
-                    <span className="mx-1.5 text-zinc-700">•</span>
-                    PyTorch
-                    <span className="mx-1.5 text-zinc-700">•</span>
-                    Spark
-                    <span className="mx-1.5 text-zinc-700">•</span>
-                    SQL
-                    <span className="mx-1.5 text-zinc-700">•</span>
-                    FastAPI
-                    <span className="mx-1.5 text-zinc-700">•</span>
-                    Node.js
-                  </p>
+                  <div className="mt-2 flex flex-wrap gap-x-2 gap-y-1.5 text-[11px] text-zinc-400">
+                    {[
+                      "Python",
+                      "PyTorch",
+                      "Spark",
+                      "SQL",
+                      "FastAPI",
+                      "Node.js",
+                    ].map((item) => (
+                      <span key={item} className="whitespace-nowrap">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Status */}
                 <div className="border-t border-white/10 pt-4">
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between gap-4">
                     <span className="text-[10px] uppercase tracking-wider text-zinc-600">
                       Status
                     </span>
 
-                    <span className="flex items-center gap-2 text-[11px] text-emerald-400">
-                      <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                    <span className="flex items-center gap-2 text-right text-[11px] text-emerald-400">
+                      <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-400" />
                       Open to opportunities
                     </span>
                   </div>
